@@ -1,16 +1,33 @@
-# Petterson's Paint Company
+# Petterson's Paint Company CMS
 
-Página institucional estática, responsiva e multilíngue (inglês, espanhol e português), pronta para publicação na Netlify.
+Landing page multilíngue com painel administrativo, uploads e Open Graph dinâmico, projetada especificamente para a Netlify.
 
-## Desenvolvimento local
+## Arquitetura
 
-Não há etapa de build nem dependências. Abra `index.html` diretamente no navegador ou sirva a pasta com um servidor HTTP local.
+- `public/`: landing page e painel em `/admin/`.
+- `content/default.json`: conteúdo inicial e fallback versionado.
+- `netlify/functions/`: API de login, conteúdo e uploads.
+- `netlify/edge-functions/`: injeta metadados Open Graph dinâmicos no HTML.
+- Netlify Blobs: persiste o JSON editado e as imagens entre deploys, sem banco externo.
 
-## Deploy na Netlify
+## Configuração obrigatória na Netlify
 
-Ao importar este repositório na Netlify, a configuração em `netlify.toml` publica a raiz do projeto automaticamente. Nenhum comando de build é necessário.
+Crie estas variáveis de ambiente em **Project configuration > Environment variables**:
 
-## Antes de publicar
+- `ADMIN_PASSWORD`: senha administrativa forte, com pelo menos 10 caracteres.
+- `SESSION_SECRET`: segredo aleatório com pelo menos 24 caracteres. Gere com `node -e "console.log(crypto.randomBytes(32).toString('hex'))"`.
 
-Substitua os links `#` das redes Instagram e Facebook em `index.html` pelos perfis oficiais quando estiverem disponíveis.
+Depois, faça um novo deploy. O painel estará disponível em `/admin/`.
 
+## Desenvolvimento
+
+```bash
+npm install
+npm run dev
+```
+
+Para o login local, coloque `ADMIN_PASSWORD` e `SESSION_SECRET` no ambiente antes de executar a Netlify CLI. Nunca salve senhas no repositório.
+
+## Uploads
+
+São aceitas imagens JPG, PNG, WEBP e GIF de até 4 MB. Os arquivos ficam no store `pettersons-media`; o conteúdo fica em `pettersons-content`.

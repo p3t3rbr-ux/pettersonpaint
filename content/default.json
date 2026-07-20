@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-20T00:00:00.000Z",
+  "settings": {
+    "defaultLanguage": "en",
+    "languages": ["en", "es", "pt"],
+    "phone": "+19803188457",
+    "email": "paintpettersons@gmail.com",
+    "brandColor": "#00aeef",
+    "logo": "/assets/logo.webp",
+    "ogImage": "/assets/logo.webp",
+    "socials": [
+      { "id": "instagram", "label": "Instagram", "url": "" },
+      { "id": "facebook", "label": "Facebook", "url": "" }
+    ],
+    "links": [
+      { "id": "text", "type": "sms", "enabled": true },
+      { "id": "estimate", "type": "email", "enabled": true },
+      { "id": "email", "type": "email", "enabled": true }
+    ],
+    "sections": {
+      "hero": true,
+      "links": true,
+      "services": true,
+      "contact": true,
+      "social": true
+    }
+  },
+  "translations": {
+    "en": {
+      "languageName": "English",
+      "metaTitle": "Petterson's Paint Company",
+      "metaDescription": "Professional painting services for homes and businesses.",
+      "eyebrow": "Professional painting services",
+      "headline": "Color, care and precision in every project.",
+      "description": "Reliable painting solutions for homes and businesses, with attention to detail and a clean, professional finish.",
+      "textUs": "Text us",
+      "callNow": "Call now",
+      "linksTitle": "Quick links",
+      "servicesTitle": "Our services",
+      "contactTitle": "Contact information",
+      "socialTitle": "Social media",
+      "hoursLabel": "Service hours",
+      "hoursValue": "Contact us to schedule",
+      "footer": "All rights reserved.",
+      "linkTextTitle": "Send us a text message",
+      "linkTextSubtitle": "Talk to our team",
+      "linkEstimateTitle": "Request a free estimate",
+      "linkEstimateSubtitle": "Tell us about your painting project",
+      "linkEmailTitle": "Send an email",
+      "linkEmailSubtitle": "We will reply as soon as possible",
+      "services": [
+        { "id": "interior", "title": "Interior painting", "description": "Clean, detailed finishes for rooms, ceilings, trim and doors." },
+        { "id": "exterior", "title": "Exterior painting", "description": "Durable exterior finishes that improve protection and curb appeal." },
+        { "id": "commercial", "title": "Commercial projects", "description": "Professional painting solutions for offices and business spaces." },
+        { "id": "colors", "title": "Color guidance", "description": "Practical support to choose colors and finishes for your project." }
+      ]
+    },
+    "es": {
+      "languageName": "Español",
+      "metaTitle": "Petterson's Paint Company",
+      "metaDescription": "Servicios profesionales de pintura para hogares y negocios.",
+      "eyebrow": "Servicios profesionales de pintura",
+      "headline": "Color, cuidado y precisión en cada proyecto.",
+      "description": "Soluciones confiables para hogares y negocios, con atención al detalle y un acabado profesional.",
+      "textUs": "Enviar mensaje",
+      "callNow": "Llamar ahora",
+      "linksTitle": "Enlaces rápidos",
+      "servicesTitle": "Nuestros servicios",
+      "contactTitle": "Información de contacto",
+      "socialTitle": "Redes sociales",
+      "hoursLabel": "Horario de atención",
+      "hoursValue": "Contáctanos para programar",
+      "footer": "Todos los derechos reservados.",
+      "linkTextTitle": "Envíanos un mensaje",
+      "linkTextSubtitle": "Habla con nuestro equipo",
+      "linkEstimateTitle": "Solicitar presupuesto gratis",
+      "linkEstimateSubtitle": "Cuéntanos sobre tu proyecto",
+      "linkEmailTitle": "Enviar un correo",
+      "linkEmailSubtitle": "Responderemos lo antes posible",
+      "services": [
+        { "id": "interior", "title": "Pintura de interiores", "description": "Acabados detallados para habitaciones, techos, molduras y puertas." },
+        { "id": "exterior", "title": "Pintura de exteriores", "description": "Acabados duraderos que mejoran la protección y apariencia." },
+        { "id": "commercial", "title": "Proyectos comerciales", "description": "Soluciones profesionales para oficinas y comercios." },
+        { "id": "colors", "title": "Orientación de colores", "description": "Apoyo para elegir colores y acabados para tu proyecto." }
+      ]
+    },
+    "pt": {
+      "languageName": "Português",
+      "metaTitle": "Petterson's Paint Company",
+      "metaDescription": "Serviços profissionais de pintura para residências e empresas.",
+      "eyebrow": "Serviços profissionais de pintura",
+      "headline": "Cor, cuidado e precisão em cada projeto.",
+      "description": "Soluções confiáveis para residências e empresas, com atenção aos detalhes e acabamento profissional.",
+      "textUs": "Enviar mensagem",
+      "callNow": "Ligar agora",
+      "linksTitle": "Links rápidos",
+      "servicesTitle": "Nossos serviços",
+      "contactTitle": "Informações de contato",
+      "socialTitle": "Redes sociais",
+      "hoursLabel": "Horário de atendimento",
+      "hoursValue": "Entre em contato para agendar",
+      "footer": "Todos os direitos reservados.",
+      "linkTextTitle": "Envie uma mensagem",
+      "linkTextSubtitle": "Fale com nossa equipe",
+      "linkEstimateTitle": "Solicitar orçamento grátis",
+      "linkEstimateSubtitle": "Conte sobre seu projeto",
+      "linkEmailTitle": "Enviar um e-mail",
+      "linkEmailSubtitle": "Responderemos assim que possível",
+      "services": [
+        { "id": "interior", "title": "Pintura de interiores", "description": "Acabamento detalhado para cômodos, tetos, rodapés e portas." },
+        { "id": "exterior", "title": "Pintura de exteriores", "description": "Acabamentos duráveis que melhoram a proteção e aparência." },
+        { "id": "commercial", "title": "Projetos comerciais", "description": "Soluções profissionais para escritórios e comércios." },
+        { "id": "colors", "title": "Orientação de cores", "description": "Apoio para escolher cores e acabamentos para seu projeto." }
+      ]
+    }
+  }
+}
