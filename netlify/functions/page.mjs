@@ -31,6 +31,10 @@ export default async (request) => {
       "cache-control": "public, max-age=0, must-revalidate",
       "netlify-cdn-cache-control": "public, max-age=30, stale-while-revalidate=120",
       "vary": "Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
     },
   });
 };
