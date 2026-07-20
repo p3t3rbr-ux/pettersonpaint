@@ -6,7 +6,22 @@ const contentStore = () => getStore({ name: "pettersons-content", consistency: "
 
 export async function getContent() {
   const stored = await contentStore().get("site", { type: "json" });
-  return stored || structuredClone(defaults);
+  if (!stored) return structuredClone(defaults);
+  const settings = {
+    ...defaults.settings,
+    ...stored.settings,
+    sections: { ...defaults.settings.sections, ...(stored.settings?.sections || {}) },
+    sectionOrder: Array.isArray(stored.settings?.sectionOrder) ? stored.settings.sectionOrder : defaults.settings.sectionOrder,
+  };
+  const translations = {};
+  for (const code of settings.languages || defaults.settings.languages) {
+    translations[code] = {
+      ...(defaults.translations[code] || defaults.translations.en),
+      ...(stored.translations?.[code] || {}),
+      services: stored.translations?.[code]?.services || defaults.translations[code]?.services || [],
+    };
+  }
+  return { ...defaults, ...stored, settings, translations };
 }
 
 const cleanUrl = (value) => {
@@ -36,11 +51,12 @@ export function sanitizeContent(input) {
       logo: cleanUrl(settings.logo) || "/assets/logo.webp",
       ogImage: cleanUrl(settings.ogImage) || "/assets/logo.webp",
       sections: Object.fromEntries(["hero", "links", "services", "contact", "social"].map((key) => [key, settings.sections?.[key] !== false])),
+      sectionOrder: [...new Set([...(settings.sectionOrder || []), "hero", "links", "services", "contact", "social"])].filter((key) => ["hero", "links", "services", "contact", "social"].includes(key)).slice(0, 5),
       socials: (settings.socials || []).slice(0, 8).map((item) => ({
         id: cleanText(item.id, 30), label: cleanText(item.label, 50), url: cleanUrl(item.url),
       })),
       links: (settings.links || []).slice(0, 10).map((item) => ({
-        id: cleanText(item.id, 30), type: ["sms", "tel", "email", "url"].includes(item.type) ? item.type : "url", enabled: item.enabled !== false, url: cleanUrl(item.url),
+        id: cleanText(item.id, 30), label: cleanText(item.label, 80), type: ["sms", "tel", "email", "url"].includes(item.type) ? item.type : "url", enabled: item.enabled !== false, url: cleanUrl(item.url),
       })),
     },
     translations: {},
@@ -64,4 +80,3 @@ export async function saveContent(input) {
   await contentStore().setJSON("site", content, { metadata: { updatedAt: content.updatedAt, version: content.version } });
   return content;
 }
-

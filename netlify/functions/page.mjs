@@ -29,12 +29,13 @@ export default async (request) => {
     headers: {
       "content-type": "text/html; charset=utf-8",
       "cache-control": "public, max-age=0, must-revalidate",
-      "netlify-cdn-cache-control": "public, max-age=30, stale-while-revalidate=120",
+      "netlify-cdn-cache-control": "public, max-age=10, stale-while-revalidate=30",
       "vary": "Accept-Encoding",
       "x-content-type-options": "nosniff",
       "x-frame-options": "DENY",
       "referrer-policy": "strict-origin-when-cross-origin",
       "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
     },
   });
 };

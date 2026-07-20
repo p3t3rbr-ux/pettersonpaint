@@ -5,7 +5,7 @@ import { json, sameOrigin } from "../lib/http.mjs";
 export default async (request) => {
   if (request.method === "GET") {
     const content = await getContent();
-    return new Response(JSON.stringify(content), { headers: { "content-type": "application/json; charset=utf-8", "cache-control": "public, max-age=30, stale-while-revalidate=300" } });
+    return new Response(JSON.stringify(content), { headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-cache, must-revalidate" } });
   }
   if (request.method !== "PUT") return json({ error: "Method not allowed" }, 405);
   if (!sameOrigin(request) || !(await isAuthenticated(request))) return json({ error: "Não autorizado" }, 401);
@@ -14,4 +14,3 @@ export default async (request) => {
 };
 
 export const config = { path: "/api/content" };
-

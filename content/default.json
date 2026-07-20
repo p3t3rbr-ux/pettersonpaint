@@ -24,7 +24,8 @@
       "services": true,
       "contact": true,
       "social": true
-    }
+    },
+    "sectionOrder": ["hero", "links", "services", "contact", "social"]
   },
   "translations": {
     "en": {
