@@ -36,6 +36,24 @@
   force = true
 
 [[redirects]]
+  from = "/en/"
+  to = "/.netlify/functions/page"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/es/"
+  to = "/.netlify/functions/page"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pt/"
+  to = "/.netlify/functions/page"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/api/content"
   to = "/.netlify/functions/content"
   status = 200

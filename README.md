@@ -2,6 +2,15 @@
 
 Landing page multilíngue com painel administrativo, uploads e Open Graph dinâmico, projetada especificamente para a Netlify.
 
+## Recursos
+
+- Rascunho, pré-visualização, publicação, histórico e restauração.
+- Proteção contra sobrescrita concorrente e backup JSON.
+- Conteúdo EN/ES/PT com URLs próprias e `hreflang`.
+- Portfólio, depoimentos, indicadores e formulário de orçamento com fotos.
+- Gestão de leads, mídia e métricas de conversão no painel.
+- SEO local com JSON-LD, sitemap, robots e Open Graph por idioma.
+
 ## Arquitetura
 
 - `public/`: landing page e painel em `/admin/`.
