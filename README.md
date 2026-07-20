@@ -7,7 +7,7 @@ Landing page multilíngue com painel administrativo, uploads e Open Graph dinâm
 - `public/`: landing page e painel em `/admin/`.
 - `content/default.json`: conteúdo inicial e fallback versionado.
 - `netlify/functions/`: API de login, conteúdo e uploads.
-- `netlify/edge-functions/`: injeta metadados Open Graph dinâmicos no HTML.
+- `netlify/functions/page.mjs`: entrega o HTML com metadados Open Graph dinâmicos e cache na CDN.
 - Netlify Blobs: persiste o JSON editado e as imagens entre deploys, sem banco externo.
 
 ## Configuração obrigatória na Netlify

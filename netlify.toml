@@ -6,9 +6,8 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
-[[edge_functions]]
-  function = "dynamic-meta"
-  path = "/"
+[functions.page]
+  included_files = ["public/index.html"]
 
 [[headers]]
   for = "/*"
@@ -28,6 +27,12 @@
   [headers.values]
     Cache-Control = "no-store"
     X-Robots-Tag = "noindex, nofollow"
+
+[[redirects]]
+  from = "/"
+  to = "/.netlify/functions/page"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/api/content"
